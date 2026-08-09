@@ -30,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Навигация */
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -82,14 +81,12 @@
             transform: translateY(-2px);
         }
 
-        /* Контейнер */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 100px 20px 40px;
         }
 
-        /* Секции */
         .section {
             display: none;
             animation: fadeIn 0.6s ease;
@@ -104,7 +101,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Титульная страница */
         .hero {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 30px;
@@ -201,7 +197,6 @@
             background: linear-gradient(135deg, var(--success), #a8e063);
         }
 
-        /* Карточки */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -235,7 +230,6 @@
             font-size: 1.5em;
         }
 
-        /* Для учителей */
         .methodology {
             background: white;
             border-radius: 20px;
@@ -284,7 +278,6 @@
             font-size: 1.2em;
         }
 
-        /* Задания */
         .task-container {
             background: white;
             border-radius: 20px;
@@ -368,7 +361,6 @@
             50% { transform: scale(1.1); }
         }
 
-        /* Рабочие листы */
         .worksheet {
             background: white;
             border-radius: 20px;
@@ -423,7 +415,6 @@
             margin-bottom: 15px;
         }
 
-        /* Сертификат */
         .certificate-wrapper {
             background: white;
             border-radius: 20px;
@@ -534,7 +525,6 @@
             opacity: 0.85;
         }
 
-        /* Формы ввода */
         .input-group {
             margin: 15px 0;
         }
@@ -562,7 +552,6 @@
             box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
         }
 
-        /* Адаптивность */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2em; }
             .hero-character { font-size: 5em; }
@@ -572,7 +561,6 @@
             .worksheet { padding: 30px 20px; }
         }
 
-        /* Печать - ИСПРАВЛЕНО */
         @media print {
             @page { 
                 size: A4; 
@@ -632,7 +620,6 @@
             }
         }
 
-        /* Утилиты */
         .text-center { text-align: center; }
         .mb-20 { margin-bottom: 20px; }
         .mt-20 { margin-top: 20px; }
@@ -675,7 +662,6 @@
 </head>
 <body>
 
-    <!-- Навигация -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo" onclick="showSection('home')">
@@ -694,7 +680,6 @@
 
     <div class="container">
 
-        <!-- ГЛАВНАЯ СТРАНИЦА -->
         <section id="home" class="section active">
             <div class="hero">
                 <div class="hero-character">🦉</div>
@@ -702,7 +687,7 @@
                 <p class="hero-subtitle">Интерактивный образовательный портал по русскому языку для 1 класса</p>
                 
                 <div class="author-info">
-                    <h3>👩‍🏫 Автор проекта:</h3>
+                    <h3>‍🏫 Автор проекта:</h3>
                     <p><strong>Курочкина Юлия Владимировна</strong></p>
                     <p>Учитель начальных классов</p>
                     <p>МБОУ СОШ №20, г. Сургут</p>
@@ -710,12 +695,12 @@
                 </div>
 
                 <div style="margin: 30px 0;">
-                    <button class="btn" onclick="showSection('tasks')"> Начать обучение</button>
+                    <button class="btn" onclick="showSection('tasks')">🎯 Начать обучение</button>
                     <button class="btn btn-gold" onclick="showSection('teacher')">📖 Методические материалы</button>
                 </div>
 
                 <div style="margin-top: 30px; font-size: 1.1em; color: var(--text);">
-                    <p> <strong>Цель:</strong> формирование функциональной грамотности младших школьников</p>
+                    <p>🎯 <strong>Цель:</strong> формирование функциональной грамотности младших школьников</p>
                     <p>✨ <strong>Задачи:</strong> развитие речи, обогащение словарного запаса, формирование навыков письма</p>
                 </div>
             </div>
@@ -727,7 +712,7 @@
                     <p>5 увлекательных станций с игровыми заданиями по русскому языку. Собери все кристаллы грамотности!</p>
                 </div>
                 <div class="card" onclick="showSection('worksheets')">
-                    <div class="card-icon"></div>
+                    <div class="card-icon">📝</div>
                     <h3>Рабочие листы</h3>
                     <p>Печатные материалы для самостоятельной работы. Соответствуют требованиям ФГОС НОО.</p>
                 </div>
@@ -739,7 +724,6 @@
             </div>
         </section>
 
-        <!-- ДЛЯ УЧИТЕЛЕЙ -->
         <section id="teacher" class="section">
             <div class="methodology">
                 <h2>📚 Методическое сопровождение</h2>
@@ -821,7 +805,6 @@
             </div>
         </section>
 
-        <!-- ЗАДАНИЯ -->
         <section id="tasks" class="section">
             <div class="task-container">
                 <div class="task-header">
@@ -841,7 +824,6 @@
                     <span class="crystal" id="c5">⚪</span>
                 </div>
 
-                <!-- Станция 1 -->
                 <div id="station1" class="station">
                     <div class="task-box">
                         <h3 style="color: var(--secondary); margin-bottom: 15px;">🌸 Станция 1: Поляна Звуков и Букв</h3>
@@ -854,10 +836,9 @@
                     </div>
                 </div>
 
-                <!-- Станция 2 -->
                 <div id="station2" class="station hidden">
                     <div class="task-box">
-                        <h3 style="color: var(--secondary); margin-bottom: 15px;">🌲 Станция 2: Лес Слого-Вед</h3>
+                        <h3 style="color: var(--secondary); margin-bottom: 15px;"> Станция 2: Лес Слого-Вед</h3>
                         <p><strong>Задание:</strong> Сколько слогов в слове <b>МАШИНА</b>? Выбери правильный ответ.</p>
                         <div style="text-align:center; margin:20px 0;">
                             <span class="word-card" onclick="pickSyllable(this,1)">1 слог</span>
@@ -872,17 +853,16 @@
                     </div>
                 </div>
 
-                <!-- Станция 3 -->
                 <div id="station3" class="station hidden">
                     <div class="task-box">
                         <h3 style="color: var(--secondary); margin-bottom: 15px;">🌊 Станция 3: Река Твёрдых и Мягких</h3>
                         <p><strong>Задание:</strong> Нажми на слог, чтобы выбрать его, потом нажми на нужный мост. Распредели все 6 слогов!</p>
                         <div style="text-align:center; margin:20px 0;">
-                            <div class="word-card" style="background: #e3f2fd; cursor: pointer;" onclick="moveToZone(true)">
+                            <div class="word-card" style="background: #e3f2fd; cursor: pointer; min-width: 200px;" onclick="moveToZone(true)">
                                 <h4>🟦 Твёрдые (МА, ЛУ, НО...)</h4>
                                 <div id="hard" style="min-height: 60px; margin-top: 10px;"></div>
                             </div>
-                            <div class="word-card" style="background: #e8f5e9; cursor: pointer;" onclick="moveToZone(false)">
+                            <div class="word-card" style="background: #e8f5e9; cursor: pointer; min-width: 200px;" onclick="moveToZone(false)">
                                 <h4>🟩 Мягкие (МЯ, ЛЮ, НЁ...)</h4>
                                 <div id="soft" style="min-height: 60px; margin-top: 10px;"></div>
                             </div>
@@ -895,7 +875,6 @@
                     </div>
                 </div>
 
-                <!-- Станция 4 -->
                 <div id="station4" class="station hidden">
                     <div class="task-box">
                         <h3 style="color: var(--secondary); margin-bottom: 15px;">🏘️ Станция 4: Город Предложений</h3>
@@ -913,10 +892,9 @@
                     </div>
                 </div>
 
-                <!-- Станция 5 -->
                 <div id="station5" class="station hidden">
                     <div class="task-box">
-                        <h3 style="color: var(--secondary); margin-bottom: 15px;">🏛️ Станция 5: Улица Имён</h3>
+                        <h3 style="color: var(--secondary); margin-bottom: 15px;">️ Станция 5: Улица Имён</h3>
                         <p><strong>Задание:</strong> Нажми на слова, которые нужно писать с <b>ЗАГЛАВНОЙ буквы</b> (имена, клички, города):</p>
                         <div id="words5" style="text-align:center; margin:20px 0;"></div>
                         <div class="feedback" id="fb5"></div>
@@ -926,14 +904,13 @@
                     </div>
                 </div>
 
-                <!-- Финал -->
                 <div id="final" class="station hidden">
                     <div class="task-box" style="text-align: center; background: linear-gradient(135deg, #fff8e1, #ffecb3);">
-                        <div style="font-size: 5em; margin: 20px 0;"></div>
+                        <div style="font-size: 5em; margin: 20px 0;">🎉</div>
                         <h3 style="color: var(--secondary); font-size: 2em; margin-bottom: 20px;">ПОЗДРАВЛЯЕМ!</h3>
                         <p style="font-size: 1.2em; margin: 20px 0;">
                             Ты собрал все 5 кристаллов грамотности!<br>
-                            Волшебная Книга спасена! ✨
+                            Волшебная Книга спасена! 📖✨
                         </p>
                         <div class="crystals" style="margin: 30px 0;">
                             <span class="crystal collected">💎</span>
@@ -952,7 +929,6 @@
             </div>
         </section>
 
-        <!-- РАБОЧИЕ ЛИСТЫ -->
         <section id="worksheets" class="section">
             <div class="worksheet no-print">
                 <div class="worksheet-header">
@@ -984,12 +960,11 @@
                     <div class="card">
                         <h3>Имена собственные</h3>
                         <p>Заглавная буква в именах, фамилиях, названиях</p>
-                        <button class="btn mt-20" onclick="printWorksheet('names')">🖨️ Печать</button>
+                        <button class="btn mt-20" onclick="printWorksheet('names')">️ Печать</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Рабочий лист для печати -->
             <div id="printableWorksheet" class="worksheet" style="display: none;">
                 <div class="worksheet-header">
                     <h2>Рабочий лист по русскому языку</h2>
@@ -1066,7 +1041,6 @@
             </div>
         </section>
 
-        <!-- СЕРТИФИКАТ -->
         <section id="certificate" class="section">
             <div class="certificate-wrapper no-print">
                 <h2 class="text-center" style="color: var(--secondary); margin-bottom: 30px; font-size: 2.2em;"> Персональный сертификат</h2>
@@ -1087,12 +1061,11 @@
                 </div>
 
                 <div class="text-center mt-20">
-                    <button class="btn btn-gold" onclick="window.print()">🖨️ Распечатать сертификат</button>
+                    <button class="btn btn-gold" onclick="window.print()">️ Распечатать сертификат</button>
                     <button class="btn" onclick="showSection('home')">🏠 На главную</button>
                 </div>
             </div>
 
-            <!-- Сам сертификат -->
             <div class="certificate" id="printableCertificate">
                 <div class="cert-emblem">🏆</div>
                 <div class="cert-title">СЕРТИФИКАТ</div>
@@ -1113,11 +1086,11 @@
                     <strong>«Тайна Волшебной Книги»</strong><br><br>
                     за сбор всех <strong>пяти Кристаллов Грамотности</strong>,<br>
                     проявленные знания по русскому языку<br>
-                    и стремление к новым знаниям! ✨
+                    и стремление к новым знаниям! 📖✨
                 </div>
 
                 <div style="font-size: 2em; margin: 20px 0; letter-spacing: 10px;">
-                    💎 💎 💎 💎 💎
+                    💎 💎  💎 💎
                 </div>
 
                 <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
@@ -1148,7 +1121,6 @@
     </div>
 
     <script>
-        // ===== НАВИГАЦИЯ =====
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
@@ -1157,9 +1129,11 @@
             if (sectionId === 'certificate') {
                 initCertificate();
             }
+            if (sectionId === 'tasks') {
+                initStation1();
+            }
         }
 
-        // ===== КВЕСТ =====
         let crystals = [false, false, false, false, false];
         let currentStation = 1;
         let selectedSyllable = null;
@@ -1193,9 +1167,11 @@
 
         function updateCrystals() {
             for (let i = 0; i < 5; i++) {
-                document.getElementById('c' + (i+1)).textContent = crystals[i] ? '💎' : '';
+                document.getElementById('c' + (i+1)).textContent = crystals[i] ? '💎' : '⚪';
                 if (crystals[i]) {
                     document.getElementById('c' + (i+1)).classList.add('collected');
+                } else {
+                    document.getElementById('c' + (i+1)).classList.remove('collected');
                 }
             }
             
@@ -1221,12 +1197,14 @@
             currentStation++;
             if (currentStation <= 5) {
                 document.getElementById('station' + currentStation).classList.remove('hidden');
+                if (currentStation === 3) initStation3();
+                if (currentStation === 4) initStation4();
+                if (currentStation === 5) initStation5();
             } else {
                 document.getElementById('final').classList.remove('hidden');
             }
         }
 
-        // Станция 1
         function initStation1() {
             const pool = document.getElementById('words1');
             pool.innerHTML = '';
@@ -1250,14 +1228,13 @@
                 if (isVowel) {
                     total++;
                     if (isSelected) { correct++; c.classList.add('correct'); }
-                    else c.classList.add('wrong');
                 } else {
                     if (isSelected) { mistakes++; c.classList.add('wrong'); }
                 }
             });
             if (correct === total && mistakes === 0) {
                 collectCrystal(1);
-                showFeedback('fb1', true, ' Молодец! Все гласные слова найдены! Получен 💎 Кристалл №1!');
+                showFeedback('fb1', true, '🎉 Молодец! Все гласные слова найдены! Получен 💎 Кристалл №1!');
                 setTimeout(() => nextStation(), 2000);
             } else {
                 showFeedback('fb1', false, '❌ Ошибочка! Подсказка: гласные звуки можно ПЕТЬ: А-О-У-Ы-Э-Я-Ё-Ю-И. Попробуй ещё!');
@@ -1265,7 +1242,6 @@
             }
         }
 
-        // Станция 2
         function pickSyllable(el, n) {
             document.querySelectorAll('#station2 .word-card').forEach(b => b.classList.remove('selected'));
             el.classList.add('selected');
@@ -1279,14 +1255,14 @@
             }
             if (selectedSyllable === 3) {
                 collectCrystal(2);
-                showFeedback('fb2', true, ' Верно! МА-ШИ-НА = 3 слога! 💎 Кристалл №2 твой!');
+                showFeedback('fb2', true, '🎉 Верно! МА-ШИ-НА = 3 слога! 💎 Кристалл №2 твой!');
                 setTimeout(() => nextStation(), 2000);
             } else {
                 showFeedback('fb2', false, '❌ Не совсем. Помни: сколько в слове гласных — столько и слогов. В слове МАШИНА гласные А, И, А — их 3!');
             }
         }
 
-        // Станция 3
+        // ===== ИСПРАВЛЕННАЯ СТАНЦИЯ 3 =====
         function initStation3() {
             selectedSyllable = null;
             document.getElementById('hard').innerHTML = '';
@@ -1309,6 +1285,7 @@
                 };
                 pool.appendChild(el);
             });
+            document.getElementById('fb3').classList.remove('show');
         }
 
         function moveToZone(hard) {
@@ -1346,17 +1323,29 @@
                 showFeedback('fb3', true, '🎉 Отлично! Мосты построены! 💎 Кристалл №3 получен!');
                 setTimeout(() => nextStation(), 2000);
             } else {
-                showFeedback('fb3', false, '❌ Есть ошибки. Напомню: А, О, У, , Э после буквы делают её ТВЁРДОЙ. А Я, Ё, Ю, И — МЯГКОЙ.');
+                showFeedback('fb3', false, ' Есть ошибки. Напомню: А, О, У, Ы, Э после буквы делают её ТВЁРДОЙ. А Я, Ё, Ю, И — МЯГКОЙ.');
+                
+                // ✅ ВОЗВРАЩАЕМ СЛОГИ ОБРАТНО В ПУЛ
+                while (hardZone.children.length > 0) {
+                    pool.appendChild(hardZone.children[0]);
+                }
+                while (softZone.children.length > 0) {
+                    pool.appendChild(softZone.children[0]);
+                }
+                
+                // Снимаем выделение
+                selectedSyllable = null;
+                document.querySelectorAll('.word-card').forEach(c => c.classList.remove('selected'));
             }
         }
 
-        // Станция 4
         function initStation4() {
             selectedPunct = null;
             const randomSentence = sentences[Math.floor(Math.random() * sentences.length)];
             document.getElementById('sentence4').textContent = randomSentence.text;
             document.getElementById('sentence4').dataset.punct = randomSentence.punct;
             document.querySelectorAll('#station4 .word-card').forEach(b => b.classList.remove('selected'));
+            document.getElementById('fb4').classList.remove('show');
         }
 
         function pickPunct(el, p) {
@@ -1380,7 +1369,6 @@
             }
         }
 
-        // Станция 5
         function initStation5() {
             const pool = document.getElementById('words5');
             pool.innerHTML = '';
@@ -1404,7 +1392,6 @@
                 if (isCap) {
                     total++;
                     if (isSelected) { correct++; c.classList.add('correct'); }
-                    else c.classList.add('wrong');
                 } else {
                     if (isSelected) { mistakes++; c.classList.add('wrong'); }
                 }
@@ -1432,10 +1419,8 @@
             initStation1();
         }
 
-        // Инициализация квеста при загрузке
         initStation1();
 
-        // ===== РАБОЧИЕ ЛИСТЫ - ИСПРАВЛЕНО =====
         function printWorksheet(topic) {
             const topics = {
                 'sounds': 'Звуки и буквы',
@@ -1447,7 +1432,6 @@
             
             document.getElementById('worksheetTopic').textContent = topics[topic] || topic;
             
-            // Показываем рабочий лист
             const worksheet = document.getElementById('printableWorksheet');
             const worksheetsSection = document.getElementById('worksheets');
             
@@ -1457,11 +1441,9 @@
                 worksheetsSection.classList.remove('active');
             }
             
-            // Даём время на рендеринг (2 секунды)
             setTimeout(() => {
                 window.print();
                 
-                // Возвращаем обратно через 1 секунду после печати
                 setTimeout(() => {
                     worksheet.style.display = 'none';
                     worksheet.classList.remove('active');
@@ -1472,7 +1454,6 @@
             }, 2000);
         }
 
-        // ===== СЕРТИФИКАТ =====
         function formatDateRu(date) {
             const months = ['января','февраля','марта','апреля','мая','июня',
                             'июля','августа','сентября','октября','ноября','декабря'];
@@ -1518,7 +1499,6 @@
         document.getElementById('certDate').addEventListener('input', updateCertificate);
         document.getElementById('certDate').addEventListener('change', updateCertificate);
 
-        // ===== ИНИЦИАЛИЗАЦИЯ =====
         window.onload = function() {
             initCertificate();
         };
