@@ -572,15 +572,63 @@
             .worksheet { padding: 30px 20px; }
         }
 
-        /* Печать */
+        /* Печать - ИСПРАВЛЕНО */
         @media print {
-            .navbar, .no-print, .btn { display: none !important; }
-            body { background: white; }
-            .container { padding: 20px; }
-            .section { display: block !important; }
-            .worksheet, .certificate { 
-                box-shadow: none; 
-                page-break-inside: avoid;
+            @page { 
+                size: A4; 
+                margin: 15mm; 
+            }
+            
+            body { 
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .navbar, .no-print, .btn, .hero, .methodology, .task-container, .certificate-wrapper { 
+                display: none !important; 
+            }
+            
+            .container { 
+                padding: 0 !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+            }
+            
+            .section { 
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            .worksheet { 
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid !important;
+                width: 100% !important;
+                padding: 20px !important;
+                margin: 0 !important;
+                border: none !important;
+            }
+            
+            .exercise {
+                page-break-inside: avoid !important;
+                margin: 15px 0 !important;
+                background: #fff8e1 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .worksheet-header {
+                page-break-after: avoid !important;
+            }
+            
+            .student-info {
+                page-break-after: avoid !important;
             }
         }
 
@@ -662,7 +710,7 @@
                 </div>
 
                 <div style="margin: 30px 0;">
-                    <button class="btn" onclick="showSection('tasks')">🎮 Начать обучение</button>
+                    <button class="btn" onclick="showSection('tasks')"> Начать обучение</button>
                     <button class="btn btn-gold" onclick="showSection('teacher')">📖 Методические материалы</button>
                 </div>
 
@@ -706,7 +754,7 @@
                     </ul>
                 </div>
 
-                <h3 style="color: var(--secondary); margin: 25px 0 15px;"> Планируемые результаты:</h3>
+                <h3 style="color: var(--secondary); margin: 25px 0 15px;">📋 Планируемые результаты:</h3>
                 
                 <div class="task-box">
                     <h4 style="color: var(--primary); margin-bottom: 15px;">Предметные результаты:</h4>
@@ -726,12 +774,12 @@
                     <ul style="margin-left: 20px; line-height: 2;">
                         <li><strong>Регулятивные:</strong> принимать и сохранять учебную задачу, планировать действия</li>
                         <li><strong>Познавательные:</strong> анализировать, сравнивать, классифицировать языковой материал</li>
-                        <li><strong>Коммуunikативные:</strong> работать в паре, аргументировать свою точку зрения</li>
+                        <li><strong>Коммуникативные:</strong> работать в паре, аргументировать свою точку зрения</li>
                         <li><strong>Личностные:</strong> осознавать значение знаний, развивать мотивацию к обучению</li>
                     </ul>
                 </div>
 
-                <h3 style="color: var(--secondary); margin: 25px 0 15px;">📋 Рекомендации по использованию:</h3>
+                <h3 style="color: var(--secondary); margin: 25px 0 15px;">📝 Рекомендации по использованию:</h3>
                 <div class="task-box">
                     <p style="line-height: 2;">
                         <strong>1.</strong> Материал можно использовать как на уроках русского языка, так и во внеурочной деятельности.<br>
@@ -767,7 +815,7 @@
                 </div>
 
                 <div class="text-center mt-20">
-                    <button class="btn" onclick="showSection('tasks')"> Перейти к заданиям</button>
+                    <button class="btn" onclick="showSection('tasks')">🎯 Перейти к заданиям</button>
                     <button class="btn btn-gold" onclick="showSection('worksheets')">📄 Распечатать рабочие листы</button>
                 </div>
             </div>
@@ -786,10 +834,10 @@
                 </div>
 
                 <div class="crystals" id="crystalsDisplay">
-                    <span class="crystal" id="c1"></span>
+                    <span class="crystal" id="c1">⚪</span>
                     <span class="crystal" id="c2">⚪</span>
-                    <span class="crystal" id="c3">⚪</span>
-                    <span class="crystal" id="c4"></span>
+                    <span class="crystal" id="c3"></span>
+                    <span class="crystal" id="c4">⚪</span>
                     <span class="crystal" id="c5">⚪</span>
                 </div>
 
@@ -835,7 +883,7 @@
                                 <div id="hard" style="min-height: 60px; margin-top: 10px;"></div>
                             </div>
                             <div class="word-card" style="background: #e8f5e9; cursor: pointer;" onclick="moveToZone(false)">
-                                <h4> Мягкие (МЯ, ЛЮ, НЁ...)</h4>
+                                <h4>🟩 Мягкие (МЯ, ЛЮ, НЁ...)</h4>
                                 <div id="soft" style="min-height: 60px; margin-top: 10px;"></div>
                             </div>
                         </div>
@@ -881,11 +929,11 @@
                 <!-- Финал -->
                 <div id="final" class="station hidden">
                     <div class="task-box" style="text-align: center; background: linear-gradient(135deg, #fff8e1, #ffecb3);">
-                        <div style="font-size: 5em; margin: 20px 0;">🎉</div>
+                        <div style="font-size: 5em; margin: 20px 0;"></div>
                         <h3 style="color: var(--secondary); font-size: 2em; margin-bottom: 20px;">ПОЗДРАВЛЯЕМ!</h3>
                         <p style="font-size: 1.2em; margin: 20px 0;">
                             Ты собрал все 5 кристаллов грамотности!<br>
-                            Волшебная Книга спасена! 📖✨
+                            Волшебная Книга спасена! ✨
                         </p>
                         <div class="crystals" style="margin: 30px 0;">
                             <span class="crystal collected">💎</span>
@@ -895,7 +943,7 @@
                             <span class="crystal collected">💎</span>
                         </div>
                         <button class="btn btn-gold" onclick="showSection('certificate')" style="font-size: 1.3em; padding: 20px 50px;">
-                            🏆 Получить сертификат
+                             Получить сертификат
                         </button>
                         <br>
                         <button class="btn" onclick="restartQuest()" style="margin-top: 20px;">🔄 Пройти ещё раз</button>
@@ -916,17 +964,17 @@
                     <div class="card">
                         <h3>Звуки и буквы</h3>
                         <p>Задания на различение гласных и согласных звуков</p>
-                        <button class="btn mt-20" onclick="printWorksheet('sounds')">️ Печать</button>
+                        <button class="btn mt-20" onclick="printWorksheet('sounds')">🖨️ Печать</button>
                     </div>
                     <div class="card">
                         <h3>Слоги и ударение</h3>
                         <p>Деление слов на слоги, постановка ударения</p>
-                        <button class="btn mt-20" onclick="printWorksheet('syllables')">️ Печать</button>
+                        <button class="btn mt-20" onclick="printWorksheet('syllables')">🖨️ Печать</button>
                     </div>
                     <div class="card">
                         <h3>Твёрдые и мягкие звуки</h3>
                         <p>Обозначение мягкости согласных на письме</p>
-                        <button class="btn mt-20" onclick="printWorksheet('hardsoft')">️ Печать</button>
+                        <button class="btn mt-20" onclick="printWorksheet('hardsoft')">🖨️ Печать</button>
                     </div>
                     <div class="card">
                         <h3>Предложения</h3>
@@ -1021,7 +1069,7 @@
         <!-- СЕРТИФИКАТ -->
         <section id="certificate" class="section">
             <div class="certificate-wrapper no-print">
-                <h2 class="text-center" style="color: var(--secondary); margin-bottom: 30px; font-size: 2.2em;">🏆 Персональный сертификат</h2>
+                <h2 class="text-center" style="color: var(--secondary); margin-bottom: 30px; font-size: 2.2em;"> Персональный сертификат</h2>
                 
                 <div class="input-group">
                     <label for="certFirstName">Имя ученика:</label>
@@ -1065,7 +1113,7 @@
                     <strong>«Тайна Волшебной Книги»</strong><br><br>
                     за сбор всех <strong>пяти Кристаллов Грамотности</strong>,<br>
                     проявленные знания по русскому языку<br>
-                    и стремление к новым знаниям! 📖✨
+                    и стремление к новым знаниям! ✨
                 </div>
 
                 <div style="font-size: 2em; margin: 20px 0; letter-spacing: 10px;">
@@ -1209,7 +1257,7 @@
             });
             if (correct === total && mistakes === 0) {
                 collectCrystal(1);
-                showFeedback('fb1', true, '🎉 Молодец! Все гласные слова найдены! Получен 💎 Кристалл №1!');
+                showFeedback('fb1', true, ' Молодец! Все гласные слова найдены! Получен 💎 Кристалл №1!');
                 setTimeout(() => nextStation(), 2000);
             } else {
                 showFeedback('fb1', false, '❌ Ошибочка! Подсказка: гласные звуки можно ПЕТЬ: А-О-У-Ы-Э-Я-Ё-Ю-И. Попробуй ещё!');
@@ -1231,10 +1279,10 @@
             }
             if (selectedSyllable === 3) {
                 collectCrystal(2);
-                showFeedback('fb2', true, '🎉 Верно! МА-ШИ-НА = 3 слога! 💎 Кристалл №2 твой!');
+                showFeedback('fb2', true, ' Верно! МА-ШИ-НА = 3 слога! 💎 Кристалл №2 твой!');
                 setTimeout(() => nextStation(), 2000);
             } else {
-                showFeedback('fb2', false, ' Не совсем. Помни: сколько в слове гласных — столько и слогов. В слове МАШИНА гласные А, И, А — их 3!');
+                showFeedback('fb2', false, '❌ Не совсем. Помни: сколько в слове гласных — столько и слогов. В слове МАШИНА гласные А, И, А — их 3!');
             }
         }
 
@@ -1298,7 +1346,7 @@
                 showFeedback('fb3', true, '🎉 Отлично! Мосты построены! 💎 Кристалл №3 получен!');
                 setTimeout(() => nextStation(), 2000);
             } else {
-                showFeedback('fb3', false, '❌ Есть ошибки. Напомню: А, О, У, Ы, Э после буквы делают её ТВЁРДОЙ. А Я, Ё, Ю, И — МЯГКОЙ.');
+                showFeedback('fb3', false, '❌ Есть ошибки. Напомню: А, О, У, , Э после буквы делают её ТВЁРДОЙ. А Я, Ё, Ю, И — МЯГКОЙ.');
             }
         }
 
@@ -1387,7 +1435,7 @@
         // Инициализация квеста при загрузке
         initStation1();
 
-        // ===== РАБОЧИЕ ЛИСТЫ =====
+        // ===== РАБОЧИЕ ЛИСТЫ - ИСПРАВЛЕНО =====
         function printWorksheet(topic) {
             const topics = {
                 'sounds': 'Звуки и буквы',
@@ -1398,15 +1446,30 @@
             };
             
             document.getElementById('worksheetTopic').textContent = topics[topic] || topic;
-            document.getElementById('printableWorksheet').style.display = 'block';
-            document.getElementById('worksheets').classList.remove('active');
-            document.getElementById('printableWorksheet').classList.add('active');
             
+            // Показываем рабочий лист
+            const worksheet = document.getElementById('printableWorksheet');
+            const worksheetsSection = document.getElementById('worksheets');
+            
+            worksheet.style.display = 'block';
+            worksheet.classList.add('active');
+            if (worksheetsSection) {
+                worksheetsSection.classList.remove('active');
+            }
+            
+            // Даём время на рендеринг (2 секунды)
             setTimeout(() => {
                 window.print();
-                document.getElementById('printableWorksheet').style.display = 'none';
-                document.getElementById('worksheets').classList.add('active');
-            }, 500);
+                
+                // Возвращаем обратно через 1 секунду после печати
+                setTimeout(() => {
+                    worksheet.style.display = 'none';
+                    worksheet.classList.remove('active');
+                    if (worksheetsSection) {
+                        worksheetsSection.classList.add('active');
+                    }
+                }, 1000);
+            }, 2000);
         }
 
         // ===== СЕРТИФИКАТ =====
